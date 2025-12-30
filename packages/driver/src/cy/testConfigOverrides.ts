@@ -81,6 +81,15 @@ function mutateConfiguration (testConfig: ResolvedTestConfigOverride, config, en
 
   const localConfigOverridesBackup = _.clone(localConfigOverrides)
 
+  // Do not allow overriding test/suite environment variables via testConfigOverrides with disallowCypressEnv=true
+  // as the server needs to be restarted. The environment variables needing to be overridden need to be injected via the Cypress server
+  // and are not permitted in the browser.
+  if (config('disallowCypressEnv') && localConfigOverrides.env) {
+    let err = $errUtils.errByPath('config.invalid_test_override_with_disallow_cypress_env')
+
+    throw err
+  }
+
   if (localConfigOverrides.env) {
     env(localConfigOverrides.env)
   }

@@ -1,0 +1,9 @@
+{
+  "name": "disallow-cypress-env",
+  "version": "0.0.0-test",
+  "description": "Example running specs using Cypress via experimental studio",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "type": "module"
+}

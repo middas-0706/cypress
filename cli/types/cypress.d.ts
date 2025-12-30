@@ -2192,6 +2192,14 @@ declare namespace Cypress {
     task<S = unknown>(event: string, arg?: any, options?: Partial<Loggable & Timeoutable>): Chainable<S>
 
     /**
+     * Gets multiple environment variables.
+     * @see https://on.cypress.io/env
+     * @example
+     *    cy.env(['KEY_1', 'KEY_2']).then(({ KEY_1, KEY_2 }) => { ... })
+     */
+    env(keys: string[]): Chainable<Record<string, any>>
+
+    /**
      * Enables you to work with the subject yielded from the previous command.
      *
      * @see https://on.cypress.io/then
@@ -2934,6 +2942,18 @@ declare namespace Cypress {
      * @default null
      */
     baseUrl: string | null
+
+    /**
+     * Whether Cypress should allow [Cypress.env()](https://on.cypress.io/env) API to be available in the browser.
+     *
+     * Cypress recommends migrating to the cy.env() command and enabling this within your Cypress configuration.
+     *
+     * The use of Cypress.env() will warn and throw an error when this is set to true.
+     *
+     * This will be the default behavior in a future major version of Cypress and Cypress.env() will be removed.
+     * @default false
+     */
+    disallowCypressEnv: boolean
     /**
      * Any values to be set as [environment variables](https://on.cypress.io/environment-variables)
      * @default {}

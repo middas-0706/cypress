@@ -54,6 +54,14 @@ describe('testConfigOverrides', () => {
     expectedExitCode: 2,
   })
 
+  systemTests.it(`fails when trying to perform testConfigOverrides for Cypress.env() with disallowCypressEnv=true`, {
+    spec: 'testConfigOverrides/disallow_cypress_env.cy.js',
+    configFile: 'cypress-disallow-cypress-env.config.mjs',
+    expectedExitCode: 1,
+    browser: 'electron',
+    snapshot: true,
+  })
+
   // window.Error throws differently for firefox. break into
   // browser permutations for snapshot comparisons
   const permutations: BrowserName[][] = [

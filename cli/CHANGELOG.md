@@ -1,7 +1,11 @@
 <!-- See the ../guides/writing-the-cypress-changelog.md for details on writing the changelog. -->
-## 15.8.2
+## 15.9.0
 
-_Released 12/30/2025 (PENDING)_
+_Released 1/13/2026 (PENDING)_
+
+**Features:**
+
+- Introduced the new [`cy.env()`](https://docs.cypress.io/api/commands/env) command and [`disallowCypressEnv`](https://docs.cypress.io/app/references/configuration#Global) configuration option. Additionally, [`Cypress.env()](https://docs.cypress.io/api/cypress-api/env) is now deprecated and will be removed in a future major release of Cypress. To understand why, and how to migrate, please read our [Migration Guide](https://on.cypress.io/cypress-env-migration). Addressed in [#33181](https://github.com/cypress-io/cypress/pull/33181).
 
 **Bugfixes:**
 

@@ -413,6 +413,14 @@ export function mergeDefaults (
     additionalIgnorePattern,
   }
 
+  // we want the disallowCypressEnv option to be inherited by e2e/component config when evaluating
+  // breaking options in order to correctly hide the error that Cypress.env() is deprecated when disallowCypressEnv is true
+  // unless the value is explicitly set
+  config.disallowCypressEnv = config.disallowCypressEnv ?? false
+  if (!_.has(config[testingType], 'disallowCypressEnv')) {
+    config[testingType].disallowCypressEnv = config.disallowCypressEnv
+  }
+
   // split out our own app wide env from user env variables
   // and delete envFile
   config.env = parseEnv(config, { ...cliConfig.env, ...options.env }, resolved)

@@ -30,6 +30,7 @@ exports[`config/src/index > .getDefaultValues > returns list of public config ke
   "defaultBrowser": null,
   "defaultCommandTimeout": 4000,
   "devServerPublicPathRoute": "/__cypress/src",
+  "disallowCypressEnv": false,
   "downloadsFolder": "cypress/downloads",
   "e2e": {
     "specPattern": "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
@@ -126,6 +127,7 @@ exports[`config/src/index > .getDefaultValues > returns list of public config ke
   "defaultBrowser": null,
   "defaultCommandTimeout": 4000,
   "devServerPublicPathRoute": "/__cypress/src",
+  "disallowCypressEnv": false,
   "downloadsFolder": "cypress/downloads",
   "e2e": {
     "specPattern": "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
@@ -213,6 +215,7 @@ exports[`config/src/index > .getPublicConfigKeys > returns list of public config
   "component",
   "defaultBrowser",
   "defaultCommandTimeout",
+  "disallowCypressEnv",
   "downloadsFolder",
   "e2e",
   "env",
